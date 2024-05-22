@@ -20,12 +20,12 @@ class ProductList(generics.ListCreateAPIView):
     serializer_class = serializers.ProductListSerializer
     pagination_classes = pagination.PageNumberPagination
 
-    def get_queryset(self):
+    """def get_queryset(self):
         qs = super().get_queryset()
         category = self.request.GET["category"]
         category = models.ProductCategory.objects.get(id=category)
         qs = qs.filter(category=category)
-        return qs
+        return qs"""
 
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -42,6 +42,17 @@ class CustomerList(generics.ListCreateAPIView):
 class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Customer.objects.all()
     serializer_class = serializers.CustomerDetailSerializer
+
+
+# DeliveryAgent
+class DeliveryAgentList(generics.ListCreateAPIView):
+    queryset = models.DeliveryAgent.objects.all()
+    serializer_class = serializers.DeliveryAgentSerializer
+
+
+class DeliveryAgentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.DeliveryAgent.objects.all()
+    serializer_class = serializers.DeliveryAgentDetailSerializer
 
 
 # Order

@@ -85,6 +85,27 @@ class CustomerDetailSerializer(serializers.ModelSerializer):
         self.Meta.depth = 1
 
 
+# DeliveryAgent
+class DeliveryAgentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DeliveryAgent
+        fields = ["id", "user", "mobile", "location"]
+
+    def __init__(self, *args, **kwargs):
+        super(DeliveryAgentSerializer, self).__init__(*args, **kwargs)
+        self.Meta.depth = 1
+
+
+class DeliveryAgentDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.DeliveryAgent
+        fields = ["id", "user", "mobile", "location"]
+
+    def __init__(self, *args, **kwargs):
+        super(DeliveryAgentDetailSerializer, self).__init__(*args, **kwargs)
+        self.Meta.depth = 1
+
+
 # Order
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:

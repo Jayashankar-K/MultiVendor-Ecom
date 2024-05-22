@@ -47,6 +47,16 @@ class Customer(models.Model):
         return self.user.username
 
 
+# DeliveryAgent Model
+class DeliveryAgent(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    mobile = models.PositiveBigIntegerField()
+    location = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.user.username
+
+
 # Order Model
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
