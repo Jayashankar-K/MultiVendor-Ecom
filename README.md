@@ -1,5 +1,5 @@
 # Multivendor Ecommerce Website
-
+Still in Development
 ## Description
 
 This project is a multi-vendor ecommerce website that allows multiple sellers to list their products for sale. Customers can browse through various categories, view product details, and make purchases using different payment methods. The website includes features for customers, sellers, and administrators, providing a comprehensive platform for ecommerce activities.
